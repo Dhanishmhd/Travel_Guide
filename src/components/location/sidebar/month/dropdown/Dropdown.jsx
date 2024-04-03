@@ -1,37 +1,61 @@
-import React, { useState } from 'react'
-import "./Dropdown.css"
-import Input from '../../../../Input';
+import React, { useState } from 'react';
+import './Dropdown.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAttractionMonth, applyFilters } from '../../../../../features/attractions';
 
-const Dropdown = ({handleChange,selected,setSelected}) => {
-    const [isActive,setIsActive] =useState(false)
-    const options = ['All', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  return ( 
-    <div className="dropdown">
-          <div className="dropdown__btn" onClick={(e) => {
-            setIsActive(!isActive)
-          }}>{selected}
-            <i class='bx bxs-down-arrow'></i>
-          </div>
-          {isActive&&(
-          <div className="dropdown__content">
-            {options.map(option => (
-                <div onClick={e => {
-                    setSelected(option)
-                    setIsActive(false)
-                }} 
-                className="dropdown__item">
-                      <Input
-                      handleChange={handleChange}
-                      value={option}
-                      title={option}
-                      name="test2"
-                    />
-                </div>
-            ))}
+const Dropdown = () => {
+  const [isActive, setIsActive] = useState(false);
+  const dispatch = useDispatch()
+  const { month } = useSelector(state => state.attractions.based)
+  const options = [
+    'All',
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
+  const handleChange = (option) => {
+    setIsActive(false);
+    dispatch(setAttractionMonth(option))
+    dispatch(applyFilters())
+
+  };
+
+  return (
+    <div className='dropdown'>
+      <div
+        className='dropdown__btn'
+        onClick={() => setIsActive(!isActive)}
+        role='button'
+        aria-expanded={isActive}
+      >
+        {month}
+        <i className='bx bxs-down-arrow'></i>
+      </div>
+      {isActive && (
+        <div className='dropdown__content'>
+          {options.map((option) => (
+            <div
+              key={option}
+              onClick={() => handleChange(option)}
+              className='dropdown__item'
+            >
+              {option}
+            </div>
+          ))}
         </div>
-            )}
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Dropdown
+export default Dropdown;
