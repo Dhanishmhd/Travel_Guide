@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Location.css"
 import Sidebars from './sidebar/Sidebars'
 import Navigation from './navigation/Navigation'
@@ -6,9 +6,18 @@ import Products from './products/Products'
 import Recommendation from './recomendation/Recommendation'
 import products from '../../db/Data'
 import Card from '../Card'
+import { useDispatch, useSelector } from 'react-redux'
+import { setAttractions } from '../../features/attractions'
 
 const Location = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const dispatch = useDispatch()
+  const { attractions } = useSelector(state => state.attractions)
+
+  useEffect(() => {
+    dispatch(setAttractions(products))
+  },[])
 
   // ----------- Input Filter -----------
   const [query, setQuery] = useState("");
