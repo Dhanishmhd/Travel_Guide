@@ -1,0 +1,22 @@
+.location__recommendation{
+    padding-top: 10px;
+}
+
+.recommended__flex{
+    display: flex;
+    margin-left: 30rem;
+}
+
+.btns{
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 13.35px;
+    border-radius: 5px;
+    margin-right: 6px;
+    font-weight: var(--font-medium);
+}
+.btns:hover {
+    background-color: var(--title-color-dark);
+    color: white;
+  }
+  

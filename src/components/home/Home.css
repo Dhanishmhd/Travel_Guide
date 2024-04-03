@@ -1,0 +1,30 @@
+.home{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.home__image{
+    width: 100%;
+    height: 910px;
+    object-fit: cover;
+}
+
+.home__text{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    width: 100%;
+}
+
+.home__subtitle{
+    color: white;
+}
+
+.home__button{
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+}

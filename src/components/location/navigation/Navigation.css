@@ -1,0 +1,35 @@
+
+
+/* location navbar */
+.location__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30rem;
+    margin-top:4.6rem;
+  }
+
+  .location__title {
+    font-size: var(--h1-font-size);
+    margin: 0;
+  }
+  .location__search{
+    margin-right: 2.9rem;
+    display: flex;
+    align-items: center;
+  }
+.location-search__icon{
+    padding-right: 10px;
+    color: var(--title-color);
+    font-size: var(--h2-font-size);
+    
+}
+.location-search__input{
+    padding: 10px 20px;
+    font-size: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--container-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    width: 25rem;
+}
