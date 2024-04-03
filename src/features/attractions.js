@@ -7,7 +7,8 @@ const initialState = {
       attraction_type:[],
       month:"Select Month",
       rating:"",
-      location:""
+      location:"",
+      search:""
     }
 }
 
@@ -23,9 +24,16 @@ export const attractionsSlice = createSlice({
     applyFilters: (state) => {
       state.filtered_attractions = state.attractions.filter(attraction =>
         (state.based.attraction_type.length === 0 || state.based.attraction_type.includes(attraction.touristAttraction)) &&
+        (state.based.location === "" || state.based.location === attraction.district) &&
         (state.based.month === "Select Month" || state.based.month === attraction.month)
       );
     },
+
+    searchForLocation:(state, action) => {
+      state.based.search = action.payload
+      state.filtered_attractions = state.attractions.filter(attraction => attraction.title.toLowerCase().includes(action.payload.toLowerCase()))
+    },
+    
 
     setAttractionType: (state, action) => {
       const index = state.based.attraction_type.indexOf(action.payload);
@@ -48,6 +56,6 @@ export const attractionsSlice = createSlice({
   },
 })
 
-export const { setAttractions, setAttractionLocation, setAttractionMonth, setAttractionRating, setAttractionType, applyFilters } = attractionsSlice.actions
+export const { setAttractions, setAttractionLocation, setAttractionMonth, setAttractionRating, setAttractionType, applyFilters, searchForLocation } = attractionsSlice.actions
 
 export default attractionsSlice.reducer
