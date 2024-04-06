@@ -1,6 +1,6 @@
 import React from "react";
 import "./TouristAttraction.css";
-import Input from "../../../Input";
+import Input from "../../Input";
 import { attractionCategories } from "../../../../db/attractions";
 import { useDispatch, useSelector } from "react-redux";
 import { setAttractionType, applyFilters } from "../../../../features/attractions";

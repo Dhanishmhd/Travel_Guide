@@ -6,7 +6,7 @@ import { setAttractionMonth, applyFilters } from '../../../../../features/attrac
 const Dropdown = () => {
   const [isActive, setIsActive] = useState(false);
   const dispatch = useDispatch()
-  const { month } = useSelector(state => state.attractions.based)
+  const { month } = useSelector(state => state.attractions.based);
   const options = [
     'All',
     'January',
@@ -25,9 +25,12 @@ const Dropdown = () => {
 
   const handleChange = (option) => {
     setIsActive(false);
-    dispatch(setAttractionMonth(option))
-    dispatch(applyFilters())
-
+    if (option === 'All') {
+      dispatch(setAttractionMonth('All'));
+    } else {
+      dispatch(setAttractionMonth(option));
+    }
+    dispatch(applyFilters());
   };
 
   return (

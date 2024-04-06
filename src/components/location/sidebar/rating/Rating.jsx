@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Rating.css"
-import Input from '../../../Input'
+import Input from '../../Input'
 
 const Rating = ({handleChange}) => {
   
@@ -8,10 +8,10 @@ const Rating = ({handleChange}) => {
     <div>
       <h2 className='sidebar-title'>Rating</h2>
       <div className='sidebar-items'>
-        <label htmlFor="" className="sidebar-label__container">
+        {/* <label htmlFor="" className="sidebar-label__container">
           <input onChange={ handleChange }type="radio" value="" name='test2'/>
           <span className="checkmark"></span>All
-        </label>
+        </label> */}
         <Input
           handleChange={handleChange}
           value={5}

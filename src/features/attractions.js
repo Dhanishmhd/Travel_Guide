@@ -22,12 +22,19 @@ export const attractionsSlice = createSlice({
     },
 
     applyFilters: (state) => {
-      state.filtered_attractions = state.attractions.filter(attraction =>
-        (state.based.attraction_type.length === 0 || state.based.attraction_type.includes(attraction.touristAttraction)) &&
-        (state.based.location === "" || state.based.location === attraction.district) &&
-        (state.based.month === "Select Month" || state.based.month === attraction.month)
-      );
+      if (state.based.month === "All" && state.based.attraction_type.length === 0) {
+        // Show all attractions if both month and attraction type are set to "All"
+        state.filtered_attractions = state.attractions;
+      } else {
+        // Apply filters based on the selected month and attraction type
+        state.filtered_attractions = state.attractions.filter(attraction =>
+          (state.based.attraction_type.length === 0 || state.based.attraction_type.includes(attraction.touristAttraction)) &&
+          (state.based.location === "" || state.based.location === attraction.district) &&
+          (state.based.month === "Select Month" || state.based.month === "All" || state.based.month === attraction.month)
+        );
+      }
     },
+    
 
     searchForLocation:(state, action) => {
       state.based.search = action.payload
@@ -47,8 +54,13 @@ export const attractionsSlice = createSlice({
     setAttractionLocation:(state, action) => {
       state.based.location = action.payload
     },
-    setAttractionMonth:(state, action) => {
-      state.based.month = action.payload
+    setAttractionMonth: (state, action) => {
+      const selectedMonth = action.payload;
+      if (selectedMonth === 'All') {
+        state.based.month = 'All';
+      } else {
+        state.based.month = selectedMonth;
+      }
     },
     setAttractionRating:(state, action) => {
       state.based.rating = action.payload

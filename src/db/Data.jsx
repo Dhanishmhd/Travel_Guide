@@ -5,7 +5,7 @@ const data = [
         description:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
         rating:"5",
         district:"idukki",
-        touristAttraction:"hill_station",
+        touristAttraction:"Hill Station",
         month:"May",
         activity:["zip line", "Trekking", "Off roading"]
     },
@@ -15,9 +15,9 @@ const data = [
         description:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
         rating:"4",
         district:"kollam",
-        touristAttraction:"beaches_and_lakes",
+        touristAttraction:"Beaches and Lakes",
         month:"May",
-        activity:null
+        // activity:null
     },
     {
         img:"https://imgs.search.brave.com/CStTcajCdxE90xwOjQPBnd20fwPuVa-1EwCCO9jiPFk/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9oYmxp/bWcubW10Y2RuLmNv/bS9jb250ZW50L2h1/YmJsZS9pbWcva292/YWxhbS9tbXQvZGVz/dGluYXRpb24vbV9L/b3ZhbGFtX2FjdGl2/aXR5X2JlYWNoX2xf/MzgzXzYxNC5qcGc",
@@ -25,7 +25,7 @@ const data = [
         description:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
         rating:"5",
         district:"thiruvananthapuram",
-        touristAttraction:"beaches_and_lakes",
+        touristAttraction:"Beaches and Lakes",
         month:"May"
     },
     {
@@ -34,13 +34,13 @@ const data = [
         description:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
         rating:"2",
         district:"pathanamthitta",
-        touristAttraction:"hill_station",
+        touristAttraction:"Hill Station",
         month:"May",
         activity:["Camping", "Wildlife Safari"]
     },
     {
         img:"https://imgs.search.brave.com/Ec_R0-gO8Xf85NZ9dkYnTm0CWp6kdQ4Fc0qDYIzVp-4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kYXRh/LmFnYXRldHJhdmVs/LmNvbS9pbWFnZXMv/cGhvdG9nYWxsZXJ5/LzIwMjEvamV3LXRv/d24ta29jaGkuanBn",
-        title:"Fort Kochi",
+        title:"fort Kochi",
         description:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
         rating:"1",
         district:"ernakulam",
@@ -53,7 +53,7 @@ const data = [
         description:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
         rating:"5",
         district:"palakkad",
-        touristAttraction:"wildlife_sanctuaries",
+        touristAttraction:"Wildlife Sanctuaries",
         month:"May"
     },
     {
@@ -62,7 +62,7 @@ const data = [
         description:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
         rating:"1",
         district:"thrissur",
-        touristAttraction:"religious_monuments",
+        touristAttraction:"Religious Monuments",
         month:"May"
     },
     {
@@ -70,8 +70,8 @@ const data = [
         title: "Padmanabhaswamy Temple",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
         rating: "4",
-        district: "Thiruvananthapuram",
-        touristAttraction: "religious_monuments",
+        district: "thiruvananthapuram",
+        touristAttraction: "Religious Monuments",
         month: "May"
     },
     {
@@ -79,8 +79,8 @@ const data = [
         title: "Calicut Beach",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
         rating: "3",
-        district: "Kozhikode",
-        touristAttraction: "beaches_and_lakes",
+        district: "kozhikode",
+        touristAttraction: "Beaches and Lakes",
         month: "June"
     },
     {
@@ -88,8 +88,8 @@ const data = [
         title: "Kannur Fort",
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
         rating: "4",
-        district: "Kannur",
-        touristAttraction: "historic_sites",
+        district: "kannur",
+        touristAttraction: "Historic Sites",
         month: "July"
     },
     {
@@ -98,7 +98,7 @@ const data = [
         description: "Ponmudi is a hill station in the Thiruvananthapuram district of Kerala, India. It is located 53.2 kilometers north-east of Trivandrum city at an altitude of 1100 m. Ponmudi offers breathtaking views, lush greenery, and cool climate, making it a popular tourist destination.",
         rating: "4",
         district: "thiruvananthapuram",
-        touristAttraction: "hill_station",
+        touristAttraction: "Hill Station",
         month: "August"
     },
     {
@@ -107,7 +107,7 @@ const data = [
         description: "The Napier Museum, also known as the Government Art Museum, is an art and natural history museum situated in Thiruvananthapuram, Kerala. It was established in 1855 and named after Lord Napier, the then Governor of Madras. ",
         rating: "4",
         district: "thiruvananthapuram",
-        touristAttraction: "museum",
+        touristAttraction: "Museums",
         month: "October"
     },
     {
@@ -116,7 +116,7 @@ const data = [
         description: "The Napier Museum, also known as the Government Art Museum, is an art and natural history museum situated in Thiruvananthapuram, Kerala. It was established in 1855 and named after Lord Napier, the then Governor of Madras. ",
         rating: "2.2",
         district: "pathanamthitta",
-        touristAttraction: "wildlife_sanctuaries",
+        touristAttraction: "Wildlife Sanctuaries",
         month: "October"
     },
     {
@@ -125,7 +125,7 @@ const data = [
         description: "The Napier Museum, also known as the Government Art Museum, is an art and natural history museum situated in Thiruvananthapuram, Kerala. It was established in 1855 and named after Lord Napier, the then Governor of Madras. ",
         rating: "1",
         district: "pathanamthitta",
-        touristAttraction: "religious_monuments",
+        touristAttraction: "Religious Monuments",
         month: "October"
     },
     {
@@ -134,7 +134,7 @@ const data = [
         description: "The Napier Museum, also known as the Government Art Museum, is an art and natural history museum situated in Thiruvananthapuram, Kerala. It was established in 1855 and named after Lord Napier, the then Governor of Madras. ",
         rating: "3",
         district: "kollam",
-        touristAttraction: "",
+        touristAttraction: "Wildlife Sanctuaries",
         month: "October"
     },
     {
@@ -143,7 +143,7 @@ const data = [
         description: "The Napier Museum, also known as the Government Art Museum, is an art and natural history museum situated in Thiruvananthapuram, Kerala. It was established in 1855 and named after Lord Napier, the then Governor of Madras. ",
         rating: "4",
         district: "kollam",
-        touristAttraction: "museum",
+        touristAttraction: "Museums",
         month: "October"
     },
     {
@@ -152,7 +152,7 @@ const data = [
         description: "The Napier Museum, also known as the Government Art Museum, is an art and natural history museum situated in Thiruvananthapuram, Kerala. It was established in 1855 and named after Lord Napier, the then Governor of Madras. ",
         rating: "3",
         district: "kollam",
-        touristAttraction: "beaches_and_lakes",
+        touristAttraction: "Beaches and Lakes",
         month: "October"
     },
     {
@@ -161,7 +161,7 @@ const data = [
         description: "Alappuzha Beach, also known as Alleppey Beach, is one of the most popular beaches in Kerala, located in the coastal city of Alappuzha. It is renowned for its pristine sandy shores, tranquil backwaters, and picturesque sunsets. ",
         rating: "5",
         district: "alappuzha",
-        touristAttraction: "beaches_and_lakes",
+        touristAttraction: "Beaches and Lakes",
         month: "December"
     },
     

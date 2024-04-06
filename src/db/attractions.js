@@ -1,10 +1,10 @@
 export const attractionCategories = [
-    { value: "all", title: "All", name: "attraction" },
-    { value: "beaches_and_lakes", title: "Beaches and Lakes", name: "attraction" },
-    { value: "wildlife_sanctuaries", title: "Wildlife Sanctuaries", name: "attraction" },
-    { value: "historic_sites", title: "Historic Sites", name: "attraction" },
-    { value: "religious_monuments", title: "Religious Monuments", name: "attraction" },
-    { value: "hill_station", title: "Hill Station", name: "attraction" },
-    { value: "museum", title: "Museum", name: "attraction" }
+    // { value: "all", title: "All", name: "attraction" },
+    { value: "Beaches and Lakes", title: "Beaches and Lakes", name: "attraction" },
+    { value: "Wildlife Sanctuaries", title: "Wildlife Sanctuaries", name: "attraction" },
+    { value: "Historic Sites", title: "Historic Sites", name: "attraction" },
+    { value: "Religious Monuments", title: "Religious Monuments", name: "attraction" },
+    { value: "Hill Station", title: "Hill Station", name: "attraction" },
+    { value: "Museums", title: "Museums", name: "attraction" }
   ];
   

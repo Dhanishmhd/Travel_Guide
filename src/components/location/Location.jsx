@@ -5,7 +5,7 @@ import Navigation from "./navigation/Navigation";
 import Products from "./products/Products";
 import Recommendation from "./recomendation/Recommendation";
 import products from "../../db/Data";
-import Card from "../Card";
+import Card from "./Card";
 import { useDispatch, useSelector } from "react-redux";
 import { setAttractions } from "../../features/attractions";
 

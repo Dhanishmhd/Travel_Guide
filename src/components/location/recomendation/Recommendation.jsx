@@ -1,6 +1,6 @@
 import React from "react";
 import "./Recommendation.css";
-import Buttons from "../../Buttons";
+import Buttons from "../Buttons";
 import { locations } from "../../../db/location";
 import { useDispatch } from "react-redux";
 import { applyFilters, setAttractionLocation } from "../../../features/attractions";

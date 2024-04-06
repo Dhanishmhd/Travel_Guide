@@ -8,7 +8,7 @@
     margin-top: 20px;
   } 
 
-  .sidebar-label__container {
+   /* .sidebar-label__container {
     display: block;
     position: relative;
     padding-left: 35px;
@@ -32,7 +32,7 @@
     left: 0;
     height: 20px;
     width: 20px;
-    background-color: #eee; /* Initial background color */
+    background-color: #eee;
     border-radius: 50%;
   }
 
@@ -64,9 +64,4 @@
     height: 7px;
     border-radius: 50%;
     background: white;
-  }
-  
-  .line {
-    margin-top: 3rem;
-    border-color: #f7f7f7;
-  } 
+  }  */

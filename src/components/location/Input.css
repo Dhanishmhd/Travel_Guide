@@ -1,0 +1,8 @@
+.input {
+    /* Your input styles */
+  }
+  
+label {
+    font-size: var(--smaller-font-size);
+    padding-left: 0.5rem;
+  }
