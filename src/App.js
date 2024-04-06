@@ -4,19 +4,23 @@ import HomePage from './pages/HomePage';
 import Locations from './pages/locations/Locations';
 import Guidlines from './pages/guidlines/Guidlines';
 import Planner from './pages/planner/Planner';
+import { store } from './store';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<HomePage/>}/>
-          <Route path='/home' element={<HomePage/>}/>
-          <Route path='/locations' element={<Locations/>}/>
-          <Route path='/planner' element={<Planner/>}/>
-          <Route path='/guidelines' element={<Guidlines/>}/>
-        </Routes>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<HomePage/>}/>
+            <Route path='/home' element={<HomePage/>}/>
+            <Route path='/locations' element={<Locations/>}/>
+            <Route path='/planner' element={<Planner/>}/>
+            <Route path='/guidelines' element={<Guidlines/>}/>
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }
