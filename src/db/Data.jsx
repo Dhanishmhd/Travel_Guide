@@ -3,7 +3,7 @@ const data = [
         img:"https://imgs.search.brave.com/EYyp7hh2lMGZkhZJaNtyZwSA5KsggLh0__7vFZB0UGc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5hdWRsZXl0cmF2/ZWwuY29tLy0vbWVk/aWEvaW1hZ2VzL2hv/bWUvaW5kaWFuLXN1/YmNvbnRpbmVudC9p/bmRpYS9jb3VudHJ5/LWd1aWRlcy9rZXJh/bGEtZm9yLXRoZS1m/aXJzdC10aW1lLXZp/c2l0b3IvaXN0b2Nr/XzAwMDA2MjExMDI0/MF9tdW5uYXJfdGVh/X3BsYW5hdGlvbi5q/cGc_cT03OSZ3PTE5/MjAmaD02NDA",
         title:"munnar",
         description:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
-        rating:"5",
+        rating:"4",
         district:"idukki",
         touristAttraction:"Hill Station",
         month:"May",
