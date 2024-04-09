@@ -9,6 +9,9 @@ const Card = ({
   month,
   touristAttraction,
   activity,
+  phone,
+  mail,
+  location
 }) => {
   const [toggleState, setToggleState] = useState(0);
 
@@ -52,15 +55,21 @@ const Card = ({
             <h4 className="card__modal-district">District:&nbsp; </h4>
             {district}
             <h4 className="card__modal-district">Best month to visit:&nbsp;</h4>
-            {month}
+            {Array.isArray(month) ? month.join(',  ') : month}
             <h4 className="card__modal-district">
               type of tourist attraction:&nbsp;
             </h4>
             {touristAttraction}
           </div>
+          <div className="card__modal-contact">
+            <h4 className="card__modal-elements">Phone No:</h4>{phone}
+            <h4 className="card__modal-elements">Email:</h4>{mail}
+            
+          </div>
+          
           {activity && activity.length > 0 && (
             <div className="card__modal-activities">
-              <h3>Activities:</h3>
+              <h3 className="title">Activities:</h3>
               <ul>
                 {activity.map((activity, index) => (
                   <li key={index}>{activity}</li>
@@ -68,6 +77,11 @@ const Card = ({
               </ul>
             </div>
           )}
+
+          <div className="card__modal-location">
+            <a className="location" href={location}><h4 className="card__modal-district">See Location<i class='bx bx-right-arrow-alt arrow'></i></h4></a>
+          </div>
+
         </div>
       </div>
     </div>

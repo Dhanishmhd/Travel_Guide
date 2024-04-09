@@ -6,8 +6,11 @@ const data = [
         rating:"4",
         district:"idukki",
         touristAttraction:"Hill Station",
-        month:"May",
-        activity:["zip line", "Trekking", "Off roading"]
+        month:["May","June","October", "November","March"],
+        activity:["zip line", "Trekking", "Off roading"],
+        phone:"7736771135",
+        mail:"info@tourism.com",
+        location:"https://www.google.com/maps/place/Munnar,+Kerala+685612/@10.0806489,77.0435354,14z/data=!3m1!4b1!4m6!3m5!1s0x3b0799794d099a6d:0x63250e5553c7e0c!8m2!3d10.0889333!4d77.0595248!16zL20vMDFydmpi?entry=ttu"
     },
     {
         img:"https://imgs.search.brave.com/A1ABO7NUdr7CqCQNtuwyAwF0GZTiabB8LPuNoT5CDaI/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/a2VyYWxhdG91cmlz/bS5vcmcvaW1hZ2Vz/L2Rlc3RpbmF0aW9u/L2xhcmdlL3Zhcmth/bGFfYmVhY2gyMDEz/MTAzMTEyMjQwN18z/MjhfMS5qcGc",

@@ -61,6 +61,7 @@ export const attractionsSlice = createSlice({
       state.based.location = action.payload
     },
     setAttractionMonth: (state, action) => {
+      console.log("select"+action.payload);
       const selectedMonth = action.payload;
       if (selectedMonth === 'All') {
         state.based.month = 'All';

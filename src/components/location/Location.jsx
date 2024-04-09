@@ -30,6 +30,9 @@ const Location = () => {
         month,
         touristAttraction,
         activity,
+        phone,
+        mail,
+        location
       }) => (
         <Card
           key={Math.random()}
@@ -41,6 +44,9 @@ const Location = () => {
           month={month}
           touristAttraction={touristAttraction}
           activity={Array.isArray(activity) ? activity : []}
+          phone={phone}
+          mail={mail}
+          location={location}
         />
       )
     );

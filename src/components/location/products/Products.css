@@ -84,11 +84,12 @@
     text-align: center;
 }
 
-.card__modal-rd{
+.card__modal-rd,.card__modal-contact{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    
 }
 
 .card__modal-activities{
@@ -152,4 +153,26 @@
 .active-modal{
     opacity: 1;
     visibility: visible;
+}
+
+.card__modal-elements{
+    padding-left: 1rem;
+    /* mar */
+}
+
+.card__modal-location{
+    text-align: center;
+    margin-right: 20px;
+}
+.title{
+    margin-right: 20px;
+}
+
+.location{
+    color: var(--title-color);
+}
+
+.arrow{
+    font-size: 10px;
+
 }

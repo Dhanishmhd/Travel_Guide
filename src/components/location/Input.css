@@ -1,8 +1,12 @@
-.input {
-    /* Your input styles */
-  }
+.input[type="checkbox"]:checked + label::before {
+  color: grey; /* Change the color of the tick mark when checked */
+}
+.input{
+  cursor: pointer;
+}
   
 label {
     font-size: var(--smaller-font-size);
     padding-left: 0.5rem;
+    cursor: pointer;
   }
