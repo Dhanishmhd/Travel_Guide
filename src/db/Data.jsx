@@ -2,13 +2,13 @@ const data = [
     {
         img:"https://imgs.search.brave.com/EYyp7hh2lMGZkhZJaNtyZwSA5KsggLh0__7vFZB0UGc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5hdWRsZXl0cmF2/ZWwuY29tLy0vbWVk/aWEvaW1hZ2VzL2hv/bWUvaW5kaWFuLXN1/YmNvbnRpbmVudC9p/bmRpYS9jb3VudHJ5/LWd1aWRlcy9rZXJh/bGEtZm9yLXRoZS1m/aXJzdC10aW1lLXZp/c2l0b3IvaXN0b2Nr/XzAwMDA2MjExMDI0/MF9tdW5uYXJfdGVh/X3BsYW5hdGlvbi5q/cGc_cT03OSZ3PTE5/MjAmaD02NDA",
         title:"munnar",
-        description:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, repellendus veritatis. Debitis magnam perferendis, officiis dolorem corporis error itaque aliquam.",
+        description:"Munnar is a town and hill station located in the Idukki district of the southwestern Indian state of Kerala. Munnar is situated at around 1,600 metres (5,200 ft) above mean sea level, in the Western Ghats mountain range . Munnar is also called the Kashmir of South India and is a popular honeymoon destination.",
         rating:"4",
         district:"idukki",
         touristAttraction:"Hill Station",
         month:["May","June","October", "November","March"],
         activity:["zip line", "Trekking", "Off roading"],
-        phone:"7736771135",
+        phone:"911-911-911",
         mail:"info@tourism.com",
         location:"https://www.google.com/maps/place/Munnar,+Kerala+685612/@10.0806489,77.0435354,14z/data=!3m1!4b1!4m6!3m5!1s0x3b0799794d099a6d:0x63250e5553c7e0c!8m2!3d10.0889333!4d77.0595248!16zL20vMDFydmpi?entry=ttu"
     },

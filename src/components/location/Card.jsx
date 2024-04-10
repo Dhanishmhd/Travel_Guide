@@ -22,17 +22,20 @@ const Card = ({
   const renderStars = () => {
     const stars = [];
     for (let i = 0; i < rating; i++) {
-      stars.push(<i class="bx bxs-star"></i>);
+      stars.push(<i className="bx bxs-star" key={i}></i>);
     }
     return stars;
   };
+
   return (
     <div className="card__content">
       <div onClick={() => toggleTab(1)} className="card">
         <img className="card__img" src={img} alt={title} />
         <div className="card__details">
           <h3 className="card__title">{title}</h3>
-          <p className="card__subtitle">{description}</p>
+          <p className="card__subtitle" >
+            {description}
+          </p>
         </div>
       </div>
 
@@ -54,19 +57,19 @@ const Card = ({
             {renderStars()}
             <h4 className="card__modal-district">District:&nbsp; </h4>
             {district}
-            <h4 className="card__modal-district">Best month to visit:&nbsp;</h4>
+            <h4 className="card__modal-district">Best months to visit:&nbsp;</h4>
             {Array.isArray(month) ? month.join(',  ') : month}
             <h4 className="card__modal-district">
-              type of tourist attraction:&nbsp;
+              Type of tourist attraction:&nbsp;
             </h4>
             {touristAttraction}
           </div>
           <div className="card__modal-contact">
-            <h4 className="card__modal-elements">Phone No:</h4>{phone}
-            <h4 className="card__modal-elements">Email:</h4>{mail}
-            
+            <h4 className="card__modal-elements">Phone No:</h4>
+            <p>{phone}</p>
+            <h4 className="card__modal-elements">Email:</h4>
+            <p>{mail}</p>
           </div>
-          
           {activity && activity.length > 0 && (
             <div className="card__modal-activities">
               <h3 className="title">Activities:</h3>
@@ -77,11 +80,11 @@ const Card = ({
               </ul>
             </div>
           )}
-
           <div className="card__modal-location">
-            <a className="location" href={location}><h4 className="card__modal-district">See Location<i class='bx bx-right-arrow-alt arrow'></i></h4></a>
+            <a className="location" href={location}>
+              <h4 className="card__modal-district">See Location<i className='bx bx-right-arrow-alt arrow'></i></h4>
+            </a>
           </div>
-
         </div>
       </div>
     </div>

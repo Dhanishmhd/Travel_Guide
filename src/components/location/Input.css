@@ -3,6 +3,7 @@
 }
 .input{
   cursor: pointer;
+  accent-color: var(--title-color);
 }
   
 label {

@@ -38,6 +38,11 @@
 .card__subtitle{
     font-size: var(--smaller-font-size);
     width: 298px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 .card__modal{
     position: fixed;
