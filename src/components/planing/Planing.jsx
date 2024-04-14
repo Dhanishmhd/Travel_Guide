@@ -98,4 +98,4 @@ const Planing = () => {
     );
   };
 
-export default Planing
+export default Planing;
