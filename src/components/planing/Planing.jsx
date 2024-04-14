@@ -99,5 +99,3 @@ const Planing = () => {
   };
 
 export default Planing
-
-// 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
