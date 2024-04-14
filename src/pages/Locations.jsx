@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../../components/header/Header';
-import Location from '../../components/location/Location';
+import Header from '../components/header/Header';
+import Location from '../components/location/Location';
 
 
 const Locations = () => {

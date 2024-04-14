@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import Locations from './pages/locations/Locations';
+import Locations from './pages/Locations';
 import Guidlines from './pages/guidlines/Guidlines';
-import Planner from './pages/planner/Planner';
+import Planner from './pages/Planner';
 import { store } from './store';
 import { Provider } from 'react-redux';
 

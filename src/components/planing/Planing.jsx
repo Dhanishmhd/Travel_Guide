@@ -100,4 +100,8 @@ const Planing = () => {
 
 export default Planing;
 
+<<<<<<< HEAD
 //oeqwalnsaa
+=======
+//oeqwalns
+>>>>>>> refs/remotes/origin/main
