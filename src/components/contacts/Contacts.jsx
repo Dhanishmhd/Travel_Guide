@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import "./Contacts.css"
 
+
 const Contacts = () => {
     const form = useRef();
 
@@ -43,6 +44,7 @@ const Contacts = () => {
             </div>
             <div className="contact__content">
                 <h3 className="contact__title">Write your queries</h3>
+                <h3 className="contact__title">Write your queries</h3>
                 <form ref={form} onSubmit={sendEmail} action="" className="contact__form">
                     <div className="contact__form-div">
                         <label htmlFor="" className="contact__form-tag">Name</label>
@@ -50,7 +52,7 @@ const Contacts = () => {
                     </div>
                     <div className="contact__form-div">
                         <label htmlFor="" className="contact__form-tag">Mail</label>
-                        <input type="email" name='email' placeholder='Insert your email' className="contact__form-input" />
+                        <input type="text" name='email' placeholder='Insert your email' className="contact__form-input" />
                     </div>
                     <div className="contact__form-div contact__form-area">
                         <label htmlFor="" className="contact__form-tag">Queries</label>
