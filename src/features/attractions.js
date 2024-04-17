@@ -1,4 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { create } from 'zustand'
+import products from "../db/Data";
+
+
+export const useAttractions = create((set) => ({
+  attractions: products,
+  filteredAttractions: [],
+  filters: {
+    month: "Select Month",
+    attractionType: [],
+    rating: [],
+    location: "", 
+  },
+  applyFilters: (filters) => {
+    set((state) => {
+      const newFilters = {
+        ...state.filters,
+        ...filters
+      }
+      const { month, attractionType, rating, location } = newFilters;
+      console.log(newFilters)
+      const filteredAttractions = state.attractions?.filter((attraction) => {
+        return (
+          (attractionType?.length === 0 || attractionType?.includes(attraction.touristAttraction)) &&
+          (location === "" || location === attraction.district) &&
+          (month === "Select Month" || month === "All" || attraction.month?.includes(month) || attraction.month === month) &&
+          (rating.length === 0 || rating?.includes(attraction.rating))
+        );
+      });
+      return { filteredAttractions, filters: newFilters, attractions: state.attractions };
+    });
+  }
+}))
 
 const initialState = {
     attractions:[],
@@ -33,7 +66,7 @@ export const attractionsSlice = createSlice({
               (state.based.attraction_type.length === 0 || state.based.attraction_type.includes(attraction.touristAttraction)) &&
               (state.based.location === "" || state.based.location === attraction.district) &&
               // Check if month filter matches
-              (state.based.month === "Select Month" || state.based.month === "All" || state.based.month === attraction.month) &&
+              (state.based.month === "Select Month" || state.based.month === "All" || attraction.month?.includes(state.based.month)) &&
               // Check if rating filter matches
               (state.based.rating.length === 0 || state.based.rating.includes(attraction.rating))
             );

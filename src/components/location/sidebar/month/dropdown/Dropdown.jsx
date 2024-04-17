@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import './Dropdown.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAttractionMonth, applyFilters } from '../../../../../features/attractions';
+import { setAttractionMonth, applyFilters, useAttractions } from '../../../../../features/attractions';
+import { useSearchParams } from 'react-router-dom';
 
 const Dropdown = () => {
   const [isActive, setIsActive] = useState(false);
   const dispatch = useDispatch()
-  const { month } = useSelector(state => state.attractions.based);
+  // const { month } = useSelector(state => state.attractions.based);
+  const { filters } = useAttractions()
+  const [searchParams, setSearchParams] = useSearchParams()
   const options = [
     'All',
     'January',
@@ -25,14 +28,17 @@ const Dropdown = () => {
   
 
   const handleChange = (option) => {
-    setIsActive(false);
-    if (option === 'All') {
-      dispatch(setAttractionMonth('All'));
-    } else {
-      dispatch(setAttractionMonth(option));
-    }
-    dispatch(applyFilters());
+    const oldSearchParams = Object.fromEntries(searchParams)
+    setSearchParams({
+      ...oldSearchParams, 
+      month: option
+    })
+
+    setIsActive(false)
+
   };
+
+  console.log(filters)
 
   return (
     <div className='dropdown'>
@@ -42,7 +48,7 @@ const Dropdown = () => {
         role='button'
         aria-expanded={isActive}
       >
-        {month}
+        {filters.month}
         <i className='bx bxs-down-arrow'></i>
       </div>
       {isActive && (
