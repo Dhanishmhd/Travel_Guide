@@ -7,20 +7,37 @@ import Recommendation from "./recomendation/Recommendation";
 import products from "../../db/Data";
 import Card from "./Card";
 import { useDispatch, useSelector } from "react-redux";
-import { setAttractions } from "../../features/attractions";
+import { useSearchParams } from "react-router-dom";
+import {
+  applyFilters,
+  setAttractionLocation,
+  useAttractions,
+} from "../../features/attractions";
 
 const Location = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const { filtered_attractions } = useSelector((state) => state.attractions);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { filteredAttractions, applyFilters } = useAttractions()
+  const filterLocation = searchParams.get("location");
+  const filterMonth = searchParams.get("month");
 
   const dispatch = useDispatch();
-  const { filtered_attractions } = useSelector((state) => state.attractions);
+
+  // useEffect(() => {
+  //   dispatch(setAttractionLocation(filterLocation));
+  //   dispatch(applyFilters());
+  // }, [filterLocation]);
 
   useEffect(() => {
-    dispatch(setAttractions(products));
-  }, []);
+    applyFilters({
+      location: filterLocation ?? "",
+      month: filterMonth ?? "All"
+     })
+  }, [filterLocation, filterMonth])
 
   function mapProducts() {
-    return filtered_attractions?.map(
+    console.log(filteredAttractions)
+    return filteredAttractions.map(
       ({
         img,
         title,
@@ -32,7 +49,7 @@ const Location = () => {
         activity,
         phone,
         mail,
-        location
+        location,
       }) => (
         <Card
           key={Math.random()}

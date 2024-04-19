@@ -4,13 +4,18 @@ import Buttons from "../Buttons";
 import { locations } from "../../../db/location";
 import { useDispatch } from "react-redux";
 import { applyFilters, setAttractionLocation } from "../../../features/attractions";
+import { useSearchParams } from "react-router-dom";
 
 const Recommendation = () => {
   const dispatch = useDispatch()
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleClick = (e) => {
-    dispatch(setAttractionLocation(e.target.value))
-    dispatch(applyFilters())
+    const oldSearchParams = Object.fromEntries(searchParams)
+    setSearchParams({
+      ...oldSearchParams,
+      location: e.target.value
+    })
   };
 
   return (
