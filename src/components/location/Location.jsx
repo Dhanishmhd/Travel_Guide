@@ -13,6 +13,8 @@ import {
   setAttractionLocation,
   useAttractions,
 } from "../../features/attractions";
+// import { collection, getDocs } from "firebase/firestore";
+// import { db } from '../src/firestore';
 
 const Location = () => {
   const { filtered_attractions } = useSelector((state) => state.attractions);
@@ -20,6 +22,7 @@ const Location = () => {
   const { filteredAttractions, applyFilters } = useAttractions()
   const filterLocation = searchParams.get("location");
   const filterMonth = searchParams.get("month");
+  // const [locationss, setLocations] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -69,7 +72,7 @@ const Location = () => {
     );
   }
 
-  const result = mapProducts(products);
+  const result = mapProducts();
 
   return (
     <div className="location">
