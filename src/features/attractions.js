@@ -11,6 +11,7 @@ export const useAttractions = create((set) => ({
     attractionType: [],
     rating: [],
     location: "", 
+    searchname: ""
   },
   applyFilters: (filters) => {
     set((state) => {
@@ -25,7 +26,8 @@ export const useAttractions = create((set) => ({
           (attractionType?.length === 0 || attractionType?.includes(attraction.touristAttraction)) &&
           (location === "" || location === attraction.district) &&
           (month === "Select Month" || month === "All" || attraction.month?.includes(month) || attraction.month === month) &&
-          (rating.length === 0 || rating?.includes(attraction.rating))
+          (rating.length === 0 || rating?.includes(attraction.rating)) &&
+          (attraction.title.toLowerCase().includes(newFilters.searchname.toLowerCase()))
         );
       });
       return { filteredAttractions, filters: newFilters, attractions: state.attractions };

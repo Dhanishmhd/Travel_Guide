@@ -1,45 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Location.css";
 import Sidebars from "./sidebar/Sidebars";
 import Navigation from "./navigation/Navigation";
 import Products from "./products/Products";
 import Recommendation from "./recomendation/Recommendation";
-import products from "../../db/Data";
 import Card from "./Card";
-import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import {
-  applyFilters,
-  setAttractionLocation,
-  useAttractions,
-} from "../../features/attractions";
+import { useAttractions } from "../../features/attractions";
 // import { collection, getDocs } from "firebase/firestore";
 // import { db } from '../src/firestore';
 
 const Location = () => {
-  const { filtered_attractions } = useSelector((state) => state.attractions);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const { filteredAttractions, applyFilters } = useAttractions()
+  const [searchParams] = useSearchParams();
+  const { filteredAttractions, applyFilters } = useAttractions();
   const filterLocation = searchParams.get("location");
   const filterMonth = searchParams.get("month");
-  // const [locationss, setLocations] = useState([]);
-
-  const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(setAttractionLocation(filterLocation));
-  //   dispatch(applyFilters());
-  // }, [filterLocation]);
+  const filterRating = searchParams.get("ratings");
+  const filterAttractionType = searchParams.get("attractionType");
+  const filtersearchname = searchParams.get("searchname");
 
   useEffect(() => {
     applyFilters({
       location: filterLocation ?? "",
-      month: filterMonth ?? "All"
-     })
-  }, [filterLocation, filterMonth])
+      month: filterMonth ?? "All",
+      rating: filterRating?.split(",").filter((s) => s !== "") ?? [],
+      attractionType:
+        filterAttractionType?.split(",").filter((s) => s !== "") ?? [],
+      searchname: filtersearchname ?? "",
+    });
+  }, [
+    filterLocation,
+    filterMonth,
+    filterRating,
+    filterAttractionType,
+    filtersearchname,
+    applyFilters,
+  ]);
 
   function mapProducts() {
-    console.log(filteredAttractions)
+    console.log(filteredAttractions);
     return filteredAttractions.map(
       ({
         img,

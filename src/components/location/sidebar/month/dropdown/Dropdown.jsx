@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import './Dropdown.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { setAttractionMonth, applyFilters, useAttractions } from '../../../../../features/attractions';
+import { useAttractions } from "../../../../../features/attractions";
 import { useSearchParams } from 'react-router-dom';
 
 const Dropdown = () => {
   const [isActive, setIsActive] = useState(false);
-  const dispatch = useDispatch()
-  // const { month } = useSelector(state => state.attractions.based);
   const { filters } = useAttractions()
   const [searchParams, setSearchParams] = useSearchParams()
   const options = [

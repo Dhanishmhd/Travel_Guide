@@ -1,14 +1,15 @@
 import React from 'react';
 import "./Input.css"
 
-const Input = ({ handleChange, value, title, name }) => {
+const Input = ({ handleChange, value, title, name, checked }) => {
+
   return (
     <div>
       <input
-        className='input'
+        className="input"
         id={value}
         type="checkbox"
-        value={value}
+        checked={checked}
         name={name}
         onChange={handleChange}
       />

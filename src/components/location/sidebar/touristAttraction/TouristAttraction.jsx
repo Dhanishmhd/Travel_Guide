@@ -2,20 +2,34 @@ import React from "react";
 import "./TouristAttraction.css";
 import Input from "../../Input";
 import { attractionCategories } from "../../../../db/attractions";
-import { useDispatch, useSelector } from "react-redux";
-import { setAttractionType, applyFilters } from "../../../../features/attractions";
+import { useSearchParams } from "react-router-dom";
 
 const TouristAttraction = () => {
-  const dispatch = useDispatch();
-  const { based } = useSelector(state => state.attractions)
+  const [searchParams, setSearchParams] = useSearchParams();
+  const attractionType =
+    searchParams
+      .get("attractionType")
+      ?.split(",")
+      .filter((s) => s !== "") || [];
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    dispatch(setAttractionType(value));
-    dispatch(applyFilters())
+  const handleChange = (e, value) => {
+    const checked = e.target.checked;
+
+    let newAttractionType = attractionType;
+
+    if (checked && !newAttractionType.includes(value)) {
+      attractionType.push(value);
+    } else if (!checked && newAttractionType.includes(value)) {
+      newAttractionType = newAttractionType.filter((type) => type !== value);
+    }
+
+    const oldSearchParams = Object.fromEntries(searchParams.entries());
+
+    setSearchParams({
+      ...oldSearchParams,
+      attractionType: newAttractionType.join(","),
+    });
   };
-
-  console.log(based)
 
   return (
     <div>
@@ -24,7 +38,8 @@ const TouristAttraction = () => {
         {attractionCategories.map((attraction, index) => (
           <Input
             key={index}
-            handleChange={handleChange}
+            handleChange={(e) => handleChange(e, attraction.value)}
+            checked={attractionType.includes(attraction.value)}
             value={attraction.value}
             title={attraction.title}
             name={attraction.name}
