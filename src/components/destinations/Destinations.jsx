@@ -8,18 +8,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper/modules";
-import { setAttractionLocation, applyFilters } from "../../features/attractions";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useAttractions } from "../../features/attractions";
 
 const Destinations = () => {
-  const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const { filtered_attractions } = useSelector(state => state.attractions)
 
   const filterBasedOnLocation = (location) => {
     // dispatch(setAttractionLocation(location))
+
     // dispatch(applyFilters())
     const url = new URL(window.location.origin + "/locations")
     url.searchParams.set("location", location)

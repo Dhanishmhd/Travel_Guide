@@ -18,7 +18,7 @@ const Header = () => {
     return (
         <header className={`header ${toggle ? 'scroll-header' : ''}`}>
             <nav className="nav container">
-                <NavLink to="/home" className="nav__logo">Travel Guide</NavLink>
+                <NavLink to="/" className="nav__logo">Travel Guide</NavLink>
                 <div className={`nav__menu ${toggle ? 'show-menu' : ''}`}>
                     <ul className="nav__list grid">
                         <li className="nav__item">

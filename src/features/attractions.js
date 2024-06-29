@@ -4,14 +4,27 @@ import products from "../db/Data";
 
 
 export const useAttractions = create((set) => ({
-  attractions: products,
+  attractions: [],
   filteredAttractions: [],
+  isLoaded: false,
+  setIsLoaded: (isLoaded) => set((state) => ({
+    ...state,
+    isLoaded
+  })),
   filters: {
     month: "Select Month",
     attractionType: [],
     rating: [],
     location: "", 
     searchname: ""
+  },
+  setAttractions: (attractions) => {
+    set((state) => {
+      return {
+        ...state,
+        attractions
+      }
+    })
   },
   applyFilters: (filters) => {
     set((state) => {

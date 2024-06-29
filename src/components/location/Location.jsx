@@ -7,12 +7,12 @@ import Recommendation from "./recomendation/Recommendation";
 import Card from "./Card";
 import { useSearchParams } from "react-router-dom";
 import { useAttractions } from "../../features/attractions";
-// import { collection, getDocs } from "firebase/firestore";
-// import { db } from '../src/firestore';
+import { getLocations } from "../../lib/getAttractions";
+
 
 const Location = () => {
   const [searchParams] = useSearchParams();
-  const { filteredAttractions, applyFilters } = useAttractions();
+  const { filteredAttractions, applyFilters, setIsLoaded, setAttractions, isLoaded } = useAttractions();
   const filterLocation = searchParams.get("location");
   const filterMonth = searchParams.get("month");
   const filterRating = searchParams.get("ratings");
@@ -20,14 +20,19 @@ const Location = () => {
   const filtersearchname = searchParams.get("searchname");
 
   useEffect(() => {
-    applyFilters({
-      location: filterLocation ?? "",
-      month: filterMonth ?? "All",
-      rating: filterRating?.split(",").filter((s) => s !== "") ?? [],
-      attractionType:
-        filterAttractionType?.split(",").filter((s) => s !== "") ?? [],
-      searchname: filtersearchname ?? "",
-    });
+    setIsLoaded(false)
+    getLocations().then(data => {
+      setAttractions(data);
+      applyFilters({
+        location: filterLocation ?? "",
+        month: filterMonth ?? "All",
+        rating: filterRating?.split(",").filter((s) => s !== "") ?? [],
+        attractionType:
+          filterAttractionType?.split(",").filter((s) => s !== "") ?? [],
+        searchname: filtersearchname ?? "",
+      });
+      setIsLoaded(true)
+    })
   }, [
     filterLocation,
     filterMonth,
@@ -35,7 +40,10 @@ const Location = () => {
     filterAttractionType,
     filtersearchname,
     applyFilters,
+    setAttractions,
+    setIsLoaded
   ]);
+
 
   function mapProducts() {
     console.log(filteredAttractions);
@@ -78,7 +86,11 @@ const Location = () => {
       <Sidebars />
       <Navigation />
       <Recommendation />
-      <Products result={result} />
+      {isLoaded ? (<Products result={result} />) : (<>
+        <div style={{ width: '100vw', height: '100vh', background: "#fff", position: "absolute", top: "0", left: '0', zIndex: 100, display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <img src="/svg/Loader.svg" alt="loader" />
+        </div>
+      </>)}
     </div>
   );
 };
